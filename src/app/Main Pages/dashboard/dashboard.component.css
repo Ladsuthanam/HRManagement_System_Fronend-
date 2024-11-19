@@ -1,0 +1,5 @@
+.bg-custom-dark { background-color: #0f172a; }
+.bg-custom-darker { background-color: #1e293b; }
+.text-accent { color: #7dd3fc; }
+.border-accent { border-color: #7dd3fc; }
+.hover-accent:hover { background-color: #0284c7; }
