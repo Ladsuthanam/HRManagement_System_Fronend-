@@ -4,32 +4,25 @@ import { DashboardComponent } from './Main Pages/dashboard/dashboard.component';
 import { LayoutComponent } from './Main Pages/layout/layout.component';
 
 export const routes: Routes = [
-
     {
-        path : '',
+        path: '',
         redirectTo: 'login',
-        pathMatch:'full'
-    },
-
-    {
-        path:'login',
-        component:LoginComponent
+        pathMatch: 'full'
     },
     {
-        path:'',
-        component:LayoutComponent,
-        children:[
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: '',
+        component: LayoutComponent,
+        children: [
             {
-                path:'dashboard',
-                component:DashboardComponent,
-                title:'Dashboard'
-            },{
-
-            }
-        ]
-    },
-
-    {path:'dashboard',component:DashboardComponent}
-    
-   
+                path: 'dashboard',
+                loadComponent: () =>
+                    import('./Main Pages/dashboard/dashboard.component').then((m) => m.DashboardComponent), // Lazy loading the DashboardComponent
+                title: 'Dashboard', 
+            },
+        ],
+    }
 ];

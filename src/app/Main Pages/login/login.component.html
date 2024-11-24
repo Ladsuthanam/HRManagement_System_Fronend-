@@ -4,11 +4,11 @@
             <form (ngSubmit)="onLogin()" *ngIf="!isRegisterActive">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" [(ngModel)]="loginData.username" name="username" required/>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password"[(ngModel)]="loginData.password" name="password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
                 <div class="forgot-link">
@@ -29,15 +29,15 @@
             <form (ngSubmit)="onRegister()" *ngIf="isRegisterActive">
                 <h1>Registration</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" [(ngModel)]="registerData.username" name="username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" placeholder="Email" [(ngModel)]="registerData.email" name="email" required>
                     <i class='bx bxs-envelope' ></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" [(ngModel)]="registerData.password" name="password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
                 <button type="submit" class="btn">Register</button>
